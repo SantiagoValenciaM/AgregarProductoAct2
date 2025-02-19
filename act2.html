@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Producto</title>
+    <link rel="stylesheet" href="styles_act2.css">
+</head>
+<body>
+    <div id="message"></div>
+    <div class="form-container">
+        <h1>Agregar Producto</h1>
+        <form id="productForm">
+            <label for="code">Código del Producto:</label>
+            <input type="text" id="code" name="code" required>
+
+            <label for="name">Nombre del Producto:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="price">Precio:</label>
+            <input type="number" id="price" name="price" required>
+
+            <label for="quantity">Cantidad:</label>
+            <input type="number" id="quantity" name="quantity" required>
+
+            <label for="category">Categoría:</label>
+            <input type="text" id="category" name="category" required>
+
+            <button type="button" id="addProductButton">Agregar Producto</button>
+        </form>
+    </div>
+
+    <script src="script_act2.js"></script>
+</body>
+</html>

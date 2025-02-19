@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad de CSS</title>
+    <style>
+        /* 1. Medidas absolutas en CSS */
+        .absoluta1 {
+            border: 2px solid red; /* 1px = 1/96 de una pulgada */
+        }
+        .absoluta2 {
+            border: 0.5cm solid blue; /* 1cm = 37.8px */
+        }
+        .absoluta3 {
+            border: 10pt dotted gray; /* 1pt = 1/72 de una pulgada */
+        }
+
+        /* 2. Medidas relativas */
+        .grande {
+            font-size: 2em; /* 1em = tamaño de la fuente del elemento padre */
+        }
+        .azul {
+            color: blue;
+        }
+
+        /* 4. Aplicar 2em a elementos con clase "grande" */
+        h2.grande {
+            font-size: 2em;
+        }
+
+        /* 6. Explicación del modelo de caja */
+        .box-model {
+            width: 300px;
+            border: 15px solid green;
+            padding: 50px;
+            margin: 20px;
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Medidas absolutas en CSS -->
+    <section>
+        <h2>1. Medidas absolutas en CSS</h2>
+        <p>Las medidas absolutas en CSS son fijas y no cambian en relación con otros elementos. Estas medidas incluyen:</p>
+        <ul>
+            <li><strong>px (píxeles)</strong>: 1px = 1/96 de una pulgada.</li>
+            <li><strong>cm (centímetros)</strong>: 1cm = 37.8px.</li>
+            <li><strong>pt (puntos)</strong>: 1pt = 1/72 de una pulgada.</li>
+            <li><strong>mm (milimetros)</strong></li>
+            <li><strong>in (pulgadas)</strong>: 1in = 96px = 2.54cm.</li>
+            <li><strong>pc (picas)</strong>: 1pc = 12pt.</li>
+        </ul>
+    </section>
+
+    <!-- 2. Medidas relativas en CSS -->
+    <section>
+        <h2>2. Medidas relativas en CSS</h2>
+        <p>Las medidas relativas en CSS dependen de otros elementos. Algunas de estas medidas incluyen:</p>
+        <ul>
+            <li><strong>em</strong>: Relativo al tamaño de la fuente del elemento padre.</li>
+            <li><strong>rem</strong>: Relativo al tamaño de la fuente del elemento raíz (html).</li>
+            <li><strong>ex</strong>: Relativo a la altura de la letra 'x' en la fuente actual.</li>
+            <li><strong>%</strong>: Relativo al tamaño del contenedor padre.</li>
+            <li><strong>ch</strong>: Relativo al tamaño del cero.</li>
+            <li><strong>vw</strong>: Relativo a 1% del ancho de la página.</li>
+            <li><strong>vh</strong>: Relativo a 1% de la altura de la página.</li>
+            <li><strong>vmin</strong>: Relativo a 1% del tamaño mínimo de la ventana.</li>
+            <li><strong>vmax</strong>: Relativo a 1% del tamaño máximo de la ventana.</li>
+        </ul>
+        <p>El píxel es una medida estática, mientras que el porcentaje y EM son medidas relativas. El porcentaje depende del tamaño de fuente principal. EM es relativo al tamaño de fuente actual del elemento (2em significa 2 veces el tamaño de fuente actual). Entonces, si el tamaño de fuente del cuerpo es de 16 píxeles, entonces el 150% serán 24 píxeles (1,5 * 16) y 2 em serán 32 píxeles (16 * 2).</p>
+    </section>
+
+    <!-- 3. Aplicar bordes con medidas absolutas -->
+    <section>
+        <h2>3. Bordes con medidas absolutas</h2>
+        <div class="absoluta1">Borde de 2px sólido rojo.</div>
+        <div class="absoluta2">Borde de 0.5cm sólido azul.</div>
+        <div class="absoluta3">Borde de 10pt punteado gris.</div>
+    </section>
+
+    <!-- 4. Clase "grande" con 2em -->
+    <section>
+        <h2 class="grande">4. Título con clase "grande" (2em)</h2>
+        <p>Este título tiene un tamaño de fuente de 2em.</p>
+    </section>
+
+    <!-- 5. Texto "lorem ipsum" con span azul -->
+    <section>
+        <h2>5. Texto con span azul</h2>
+        <p><span class="azul">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>
+    </section>
+
+    <!-- 6. Explicación del modelo de caja -->
+    <section>
+        <h2>6. Modelo de caja en CSS</h2>
+        <p>El modelo de caja en CSS consiste en cómo se estructuran los elementos en una página web. Cada elemento se considera una caja que tiene:</p>
+        <ul>
+            <li><strong>Contenido</strong>: El área donde se muestra el contenido (texto, imágenes, etc.).</li>
+            <li><strong>Padding</strong>: Espacio entre el contenido y el borde.</li>
+            <li><strong>Borde</strong>: Línea que rodea el padding y el contenido.</li>
+            <li><strong>Margen</strong>: Espacio fuera del borde que separa el elemento de otros elementos.</li>
+        </ul>
+        <div class="box-model">Este es un ejemplo de modelo de caja.</div>
+    </section>
+
+    <!-- 7. Selectores CSS -->
+    <section>
+        <h2>7. Selectores CSS</h2>
+        <p>Explicación de los selectores:</p>
+        <ul>
+            <li><strong>p + p</strong>: Selecciona el primer párrafo que sigue inmediatamente a otro párrafo.</li>
+            <li><strong>div + p</strong>: Selecciona el primer párrafo que sigue inmediatamente a un div.</li>
+            <li><strong>div > p</strong>: Selecciona todos los párrafos que son hijos directos de un div.</li>
+            <li><strong>p#azul</strong>: Selecciona el párrafo con el id "azul".</li>
+            <li><strong>p ~ p</strong>: Selecciona todos los párrafos que son hermanos de otro párrafo.</li>
+            <li><strong>h2[title ~= "otro"]</strong>: Selecciona los elementos h2 cuyo atributo title contiene la palabra "otro".</li>
+            <li><strong>h2[lang |= "es"]</strong>: Selecciona los elementos h2 cuyo atributo lang comienza con "es".</li>
+            <li><strong>[title]</strong>: Selecciona todos los elementos que tienen el atributo title, sin importar su valor.</li>
+        </ul>
+    </section>
+
+</body>
+</html>
